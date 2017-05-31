@@ -3,7 +3,7 @@
 * Change to target dir: ```cd /target```
 * Make sure Minikube is running: ```minikube start```
 * Switch to using Minikube's Docker deamon: ```eval $(minikube docker-env)```
-  * Note: you can switch back to use your host's Docker deamon with: ```eval $(minikube docker-env)```
+  * Note: Later (don't do it now) you can switch back to use your host's Docker deamon with: ```eval $(minikube docker-env -u)```
 * Build a Docker image: ```docker build -t k8n_spring_boot_app:v1 .```
   * Repository path will be: k8n_spring_boot_app
   * Tag will be: v1
