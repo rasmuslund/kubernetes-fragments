@@ -1,0 +1,22 @@
+# Make sure namespace exists with: kubectl create namespace dev-environment
+# Apply changes since last run with:
+# kubectl apply -f environment.yaml --namespace=dev-environment
+
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv0001
+  namespace: dev-environment
+spec:
+  accessModes:
+    - ReadWriteOnce
+  capacity:
+    storage: 1Gi
+  hostPath:
+    path: /data/pv0001/
+
+#PersistentVolume
+#PersistentVolumeClaim
+#Deployment
+#Service
+#Ingres

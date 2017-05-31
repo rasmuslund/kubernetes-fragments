@@ -1,0 +1,46 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: k8n-spring-boot-app-ingress
+  annotations:
+      ingress.kubernetes.io/ssl-redirect: "false"   # By default the NGINX based ingress tries to redirect to https
+      ingress.kubernetes.io/rewrite-target: /       # Removes the '/spring' part of the path before forwarding the request
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /spring                               # When this path is called ...
+        backend:
+          serviceName: k8n-spring-boot-app-service  # ... forward to this service ...
+          servicePort: 80                           # ... on this port
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: k8n-spring-boot-app-service
+spec:
+  selector:
+    app: K8nSpringBootApp    # selector (pods med label app=MyApp)
+  ports:
+    - protocol: TCP
+      port: 80               # den port service’en skal udstilles på
+      targetPort: 8080       # porten som hver enkelt pod udstiller på
+---
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: k8n-spring-boot-app-deployment
+spec:
+  replicas: 2 # tells deployment to run 2 pods matching the template
+  template: # create pods using pod definition in this template
+    metadata:
+      # unlike pod-nginx.yaml, the name is not included in the meta data as a unique name is
+      # generated from the deployment name
+      labels:
+        app: K8nSpringBootApp
+    spec:
+      containers:
+      - name: k8n-spring-boot-app
+        image: k8n_spring_boot_app:v2
+        ports:
+        - containerPort: 8080
