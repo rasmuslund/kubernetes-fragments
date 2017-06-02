@@ -8,6 +8,6 @@ public class FixedMessageEndpoint {
 
     @RequestMapping("/messages/fixed")
     public String index() {
-        return "Hello World";
+        return "Hi World";
     }
 }

@@ -41,6 +41,7 @@ spec:
     spec:
       containers:
       - name: k8n-spring-boot-app
-        image: k8n_spring_boot_app:v2
+        image: test/k8n-spring-boot-app:latest
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080

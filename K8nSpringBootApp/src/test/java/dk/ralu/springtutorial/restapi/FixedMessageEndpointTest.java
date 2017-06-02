@@ -33,7 +33,7 @@ public class FixedMessageEndpointTest {
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
         Assert.assertEquals(200, connection.getResponseCode());
-        Assert.assertEquals("Hello World", readBody(connection));
+        Assert.assertEquals("Hi World", readBody(connection));
     }
 
     // Java's built-in support for HTTP requests leads to really verbose code...
