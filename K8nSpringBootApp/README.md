@@ -1,13 +1,20 @@
+* Required software installed:
+  * JDK 1.8 (http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+  * VirtualBox (https://www.virtualbox.org/wiki/Downloads)
+  * minikube (https://github.com/kubernetes/minikube#installation)
+  * kubectl (https://kubernetes.io/docs/tasks/tools/install-kubectl/)
+  * (Docker is probably not required - but nice to be able to run Docker commands)
+* Steps below works on Linux - don't know about other OS'es
 * Make sure Minikube is running: ```minikube start```
 * Switch to using Minikube's Docker deamon: ```eval $(minikube docker-env)```
   * Note: Later (don't do it now) you can switch back to use your host's Docker deamon with: ```eval $(minikube docker-env -u)```
-* Build maven project (boot JAR and docker image): ```mvn clean package dockerfile:build```
+* Build maven project (boot JAR and docker image): ```./mvnw clean package dockerfile:build```
   * where ```clean package``` builds the Spring Boot fat jar
   * and ```dockerfile:build``` builds the docker image (and puts it into the Minikube's Docker Deamons image cache)
     * the ```dockerfile:build``` is provided by the ```com.spotify:dockerfile-maven-plugin``` registered in ```pom.xml```
     * the name/repository path of the image is specified in the ```com.spotify:dockerfile-maven-plugin``` plugin config
     * the tag of the image will be latest (the default)
-    * running ```mvn dockerfile:build``` is therefore equivalent to running: ```docker build -t test/k8n-spring-boot-app:latest .```
+    * running ```./mvnw dockerfile:build``` is therefore equivalent to running: ```docker build -t test/k8n-spring-boot-app:latest .```
 * Optionally see docker images: ```docker images```
 * Optionally see info about an image: ```docker inspect test/k8n-spring-boot-app:latest```, e.g.:
   * ExposedPorts
@@ -33,7 +40,7 @@
   * Remember to also change the test: ```FixedMessageEndpointTest.java```
 * Complete build and redeployment in one go:
   ```
-    mvn clean package dockerfile:build \
+    ./mvnw clean package dockerfile:build \
     && kubectl apply -f KubernetesObjects.yaml \
     && kubectl patch deployment k8n-spring-boot-app-deployment -p \
     "{\"spec\":{\"template\":{\"metadata\":{\"labels\":{\"refreshTimestamp\":\"`date +'%s'`\"}}}}}"
