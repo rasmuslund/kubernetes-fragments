@@ -1,6 +1,7 @@
 package dk.ralu.k8s.fragments.cli.shell;
 
-import dk.ralu.k8s.fragments.cli.core.CurrentContext;
+import dk.ralu.k8s.fragments.cli.core.Context;
+
 import dk.ralu.k8s.fragments.cli.output.Out;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.Ordered;
@@ -13,7 +14,7 @@ import org.springframework.stereotype.Component;
 public class ShellPromptProvider implements PromptProvider {
 
     @Autowired
-    private CurrentContext currentContext;
+    private Context context;
 
     @Override
     public String getProviderName() {
@@ -24,7 +25,7 @@ public class ShellPromptProvider implements PromptProvider {
     public String getPrompt() {
         return new Out()
                 .styleBold().colorYellow().append(getProviderName()).append(" ")
-                .colorBlue().append(currentContext.getCurrentContextPath()).append(" > ")
+                .colorBlue().append(context.getCurrentContextPath()).append(" > ")
                 .toString();
     }
 }

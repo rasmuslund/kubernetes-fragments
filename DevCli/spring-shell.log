@@ -559,3 +559,113 @@ ls
 cd --to Local 
 cd --to Applications 
 cd --to ManageBackend 
+// devcli 1.2.0.RELEASE log opened at 2017-06-05 09:01:04
+// devcli 1.2.0.RELEASE log opened at 2017-06-05 10:10:47
+// devcli 1.2.0.RELEASE log opened at 2017-06-05 10:17:58
+// devcli 1.2.0.RELEASE log opened at 2017-06-05 10:34:44
+// devcli 1.2.0.RELEASE log opened at 2017-06-05 10:35:22
+// devcli 1.2.0.RELEASE log opened at 2017-06-05 10:52:08
+// devcli 1.2.0.RELEASE log opened at 2017-06-05 10:55:05
+// devcli 1.2.0.RELEASE log opened at 2017-06-05 10:56:15
+// devcli 1.2.0.RELEASE log opened at 2017-06-05 10:57:58
+// devcli 1.2.0.RELEASE log opened at 2017-06-05 10:59:15
+// devcli 1.2.0.RELEASE log opened at 2017-06-05 10:59:57
+// devcli 1.2.0.RELEASE log opened at 2017-06-05 11:00:58
+// devcli 1.2.0.RELEASE log opened at 2017-06-05 11:01:33
+// devcli 1.2.0.RELEASE log opened at 2017-06-05 11:03:43
+// devcli 1.2.0.RELEASE log opened at 2017-06-05 11:06:47
+// [failed] context set --cluster Minikube --environment Local 
+// devcli 1.2.0.RELEASE log opened at 2017-06-05 11:19:06
+context set --cluster Minikube --environment Local 
+// [failed] context clear
+// devcli 1.2.0.RELEASE log opened at 2017-06-05 11:30:33
+context set --cluster Minikube --environment Local 
+context clear
+context set --environment Prod 
+context set --environment Local 
+// devcli 1.2.0.RELEASE log opened at 2017-06-05 11:49:21
+context set --environment Prod 
+context set --cluster Minikube 
+// devcli 1.2.0.RELEASE log opened at 2017-06-05 11:51:59
+// [failed] context set --environment Prod 
+// devcli 1.2.0.RELEASE log opened at 2017-06-05 11:56:02
+context set --environment Prod 
+// devcli 1.2.0.RELEASE log opened at 2017-06-05 11:58:25
+context set --environment Prod 
+context set --cluster Minikube 
+context set --environment MyNewEnvironment
+context set --application ManageBackend 
+// devcli 1.2.0.RELEASE log opened at 2017-06-05 12:01:13
+context set --environment MyNewEnvironment
+context set --application NocBackend 
+context set --cluster Minikube 
+// devcli 1.2.0.RELEASE log opened at 2017-06-05 12:02:52
+context set --application NocBackend 
+context set --environment Local 
+// devcli 1.2.0.RELEASE log opened at 2017-06-05 12:05:40
+// devcli 1.2.0.RELEASE log opened at 2017-06-05 12:10:41
+context set --environment Local 
+// devcli 1.2.0.RELEASE log opened at 2017-06-05 12:11:33
+context set --environment Local 
+// devcli 1.2.0.RELEASE log opened at 2017-06-05 12:12:44
+context set --environment Prod 
+context set --application AppBackend 
+// devcli 1.2.0.RELEASE log opened at 2017-06-05 12:14:20
+context set --application AppBackend 
+// devcli 1.2.0.RELEASE log opened at 2017-06-05 12:14:57
+context set --application AppBackend 
+context set --environment Local 
+// devcli 1.2.0.RELEASE log opened at 2017-06-05 12:15:50
+context set --application AppBackend 
+context set --environment Local 
+context set --application 
+// devcli 1.2.0.RELEASE log opened at 2017-06-05 14:33:29
+context set --environment Prod 
+// devcli 1.2.0.RELEASE log opened at 2017-06-05 15:49:41
+context set --environment Prod 
+context set --environment *
+context set --environment Prod 
+context set --environment 
+context set --environment Prod 
+context set --cluster *
+// devcli 1.2.0.RELEASE log opened at 2017-06-05 15:53:08
+context set --environment Prod 
+context set --cluster 
+context set --environment Prod 
+context set --environment Knud
+// devcli 1.2.0.RELEASE log opened at 2017-06-05 16:47:23
+context set --environment Local 
+context set --application ManageBackend 
+context set --cluster Prod 
+context set --cluster Prod 
+// devcli 1.2.0.RELEASE log opened at 2017-06-05 16:53:20
+context set --environment Local 
+context set --environment Local --application NocBackend 
+context set --cluster Prod 
+context set --cluster
+context set --cluster Prod 
+context set --environment 
+// devcli 1.2.0.RELEASE log opened at 2017-06-05 16:58:16
+context set --cluster Prod 
+context clear
+// devcli 1.2.0.RELEASE log opened at 2017-06-05 17:00:05
+context set --environment Prod --application NocBackend 
+context clear
+// devcli 1.2.0.RELEASE log opened at 2017-06-05 17:10:48
+tools verify
+tools info
+// devcli 1.2.0.RELEASE log opened at 2017-06-05 17:11:23
+// devcli 1.2.0.RELEASE log opened at 2017-06-05 17:14:17
+// devcli 1.2.0.RELEASE log opened at 2017-06-05 17:14:49
+// devcli 1.2.0.RELEASE log opened at 2017-06-05 17:16:27
+// devcli 1.2.0.RELEASE log opened at 2017-06-05 17:19:48
+// devcli 1.2.0.RELEASE log opened at 2017-06-05 17:20:48
+help
+help context set
+clear
+context set --environment Local --application ManageBackend 
+cls
+context set --application 
+cls
+tools verify
+tools info

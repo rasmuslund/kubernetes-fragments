@@ -4,7 +4,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 @Component
-@ConfigurationProperties(prefix = "devcli.debug")
+@ConfigurationProperties(prefix = "devopscli.debug")
 public class DebugFlags {
 
     private boolean forceShowCommands;

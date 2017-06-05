@@ -17,6 +17,7 @@ public class ShellBannerProvider implements BannerProvider {
 
     @Override
     public String getBanner() {
+        System.out.println("\033[2J\033[;H"); // Clear screen
         return FileUtils.readBanner(ShellBannerProvider.class, "/DevCliAsciiBanner.txt") + "\n" + getVersion() + "\n";
     }
 
@@ -27,7 +28,7 @@ public class ShellBannerProvider implements BannerProvider {
 
     @Override
     public String getWelcomeMessage() {
-        return "DevCli - the Ivan Development and Operations Command Line Interface. "
-                + "For assistance hit TAB or type help.";
+        return "StruxureOn DevOps CLI - the StruxureOn Development and Operations Command Line Interface.\n\n"
+                + "For assistance hit TAB or type help.\n\n";
     }
 }

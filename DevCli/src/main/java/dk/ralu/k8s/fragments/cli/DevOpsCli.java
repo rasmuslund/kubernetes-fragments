@@ -5,9 +5,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 
 @SpringBootApplication
-public class DevCli {
+public class DevOpsCli {
 
     public static void main(String[] args) throws Exception {
-        new SpringApplicationBuilder().sources(DevCli.class).bannerMode(Banner.Mode.OFF).run(args);
+        new SpringApplicationBuilder().sources(DevOpsCli.class).bannerMode(Banner.Mode.OFF).run(args);
     }
 }
