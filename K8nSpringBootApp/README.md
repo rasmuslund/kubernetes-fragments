@@ -1,4 +1,4 @@
-* Required software installed:
+* Required tool installed:
   * JDK 1.8 (http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
   * VirtualBox (https://www.virtualbox.org/wiki/Downloads)
   * minikube (https://github.com/kubernetes/minikube#installation)

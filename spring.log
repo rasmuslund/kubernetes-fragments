@@ -1,0 +1,87 @@
+2017-06-04 15:07:59.557  INFO 21785 --- [restartedMain] dk.ralu.k8s.fragments.cli.DevCli         : Starting DevCli on LundsThinkPad with PID 21785 (/home/rasmus/projects/kubernetes-fragments/DevCli/target/classes started by rasmus in /home/rasmus/projects/kubernetes-fragments)
+2017-06-04 15:07:59.558  INFO 21785 --- [restartedMain] dk.ralu.k8s.fragments.cli.DevCli         : No active profile set, falling back to default profiles: default
+2017-06-04 15:07:59.598  INFO 21785 --- [restartedMain] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@545e9db2: startup date [Sun Jun 04 15:07:59 CEST 2017]; root of context hierarchy
+2017-06-04 15:08:00.180  WARN 21785 --- [restartedMain] s.c.a.AnnotationConfigApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'tools': Unsatisfied dependency expressed through field 'tools'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'virtualBox' defined in file [/home/rasmus/projects/kubernetes-fragments/DevCli/target/classes/dk/ralu/k8s/fragments/cli/tool/VirtualBox.class]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [dk.ralu.k8s.fragments.cli.tool.VirtualBox]: Constructor threw exception; nested exception is java.lang.IllegalArgumentException: Unable to parse 5 as a version
+2017-06-04 15:08:00.187  INFO 21785 --- [restartedMain] utoConfigurationReportLoggingInitializer : 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2017-06-04 15:08:00.191 ERROR 21785 --- [restartedMain] o.s.boot.SpringApplication               : Application startup failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'tools': Unsatisfied dependency expressed through field 'tools'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'virtualBox' defined in file [/home/rasmus/projects/kubernetes-fragments/DevCli/target/classes/dk/ralu/k8s/fragments/cli/tool/VirtualBox.class]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [dk.ralu.k8s.fragments.cli.tool.VirtualBox]: Constructor threw exception; nested exception is java.lang.IllegalArgumentException: Unable to parse 5 as a version
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:588)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1264)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:866)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:737)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:370)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:314)
+	at org.springframework.boot.builder.SpringApplicationBuilder.run(SpringApplicationBuilder.java:134)
+	at dk.ralu.k8s.fragments.cli.DevCli.main(DevCli.java:11)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'virtualBox' defined in file [/home/rasmus/projects/kubernetes-fragments/DevCli/target/classes/dk/ralu/k8s/fragments/cli/tool/VirtualBox.class]: Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [dk.ralu.k8s.fragments.cli.tool.VirtualBox]: Constructor threw exception; nested exception is java.lang.IllegalArgumentException: Unable to parse 5 as a version
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1155)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1099)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.addCandidateEntry(DefaultListableBeanFactory.java:1309)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1275)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveMultipleBeans(DefaultListableBeanFactory.java:1180)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1096)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585)
+	... 22 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [dk.ralu.k8s.fragments.cli.tool.VirtualBox]: Constructor threw exception; nested exception is java.lang.IllegalArgumentException: Unable to parse 5 as a version
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:154)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:89)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1147)
+	... 36 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Unable to parse 5 as a version
+	at dk.ralu.k8s.fragments.cli.tool.Tool.toVersion(Tool.java:97)
+	at dk.ralu.k8s.fragments.cli.tool.Tool.<init>(Tool.java:26)
+	at dk.ralu.k8s.fragments.cli.tool.VirtualBox.<init>(VirtualBox.java:13)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:142)
+	... 38 common frames omitted
+
+2017-06-05 00:43:45.666  INFO 16200 --- [main] dk.ralu.k8s.fragments.cli.DevCli         : Starting DevCli on LundsThinkPad with PID 16200 (/home/rasmus/projects/kubernetes-fragments/DevCli/target/classes started by rasmus in /home/rasmus/projects/kubernetes-fragments)
+2017-06-05 00:43:45.669  INFO 16200 --- [main] dk.ralu.k8s.fragments.cli.DevCli         : No active profile set, falling back to default profiles: default
+2017-06-05 00:43:45.715  INFO 16200 --- [main] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@1e67a849: startup date [Mon Jun 05 00:43:45 CEST 2017]; root of context hierarchy
+2017-06-05 00:43:46.503  INFO 16200 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-06-05 00:44:04.330  INFO 16200 --- [Thread-2] s.c.a.AnnotationConfigApplicationContext : Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@1e67a849: startup date [Mon Jun 05 00:43:45 CEST 2017]; root of context hierarchy
+2017-06-05 00:44:04.331  INFO 16200 --- [Thread-2] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 1
+2017-06-05 00:44:04.332  INFO 16200 --- [Thread-2] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2017-06-05 00:44:05.513  INFO 16279 --- [main] dk.ralu.k8s.fragments.cli.DevCli         : Starting DevCli on LundsThinkPad with PID 16279 (/home/rasmus/projects/kubernetes-fragments/DevCli/target/classes started by rasmus in /home/rasmus/projects/kubernetes-fragments)
+2017-06-05 00:44:05.515  INFO 16279 --- [main] dk.ralu.k8s.fragments.cli.DevCli         : No active profile set, falling back to default profiles: default
+2017-06-05 00:44:05.562  INFO 16279 --- [main] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@1e67a849: startup date [Mon Jun 05 00:44:05 CEST 2017]; root of context hierarchy
+2017-06-05 00:44:06.421  INFO 16279 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-06-05 00:44:41.498  INFO 16279 --- [Thread-2] s.c.a.AnnotationConfigApplicationContext : Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@1e67a849: startup date [Mon Jun 05 00:44:05 CEST 2017]; root of context hierarchy
+2017-06-05 00:44:41.499  INFO 16279 --- [Thread-2] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 1
+2017-06-05 00:44:41.500  INFO 16279 --- [Thread-2] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2017-06-05 00:44:58.067  INFO 16379 --- [main] dk.ralu.k8s.fragments.cli.DevCli         : Starting DevCli on LundsThinkPad with PID 16379 (/home/rasmus/projects/kubernetes-fragments/DevCli/target/classes started by rasmus in /home/rasmus/projects/kubernetes-fragments)
+2017-06-05 00:44:58.070  INFO 16379 --- [main] dk.ralu.k8s.fragments.cli.DevCli         : No active profile set, falling back to default profiles: default
+2017-06-05 00:44:58.108  INFO 16379 --- [main] s.c.a.AnnotationConfigApplicationContext : Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@1e67a849: startup date [Mon Jun 05 00:44:58 CEST 2017]; root of context hierarchy
+2017-06-05 00:44:58.857  INFO 16379 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-06-05 00:45:14.224  INFO 16379 --- [Thread-2] s.c.a.AnnotationConfigApplicationContext : Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@1e67a849: startup date [Mon Jun 05 00:44:58 CEST 2017]; root of context hierarchy
+2017-06-05 00:45:14.228  INFO 16379 --- [Thread-2] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 1
+2017-06-05 00:45:14.232  INFO 16379 --- [Thread-2] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown

@@ -10,7 +10,7 @@
 @REM    http://www.apache.org/licenses/LICENSE-2.0
 @REM
 @REM Unless required by applicable law or agreed to in writing,
-@REM software distributed under the License is distributed on an
+@REM tool distributed under the License is distributed on an
 @REM "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
 @REM KIND, either express or implied.  See the License for the
 @REM specific language governing permissions and limitations
@@ -59,8 +59,8 @@ set ERROR_CODE=0
 if not "%JAVA_HOME%" == "" goto OkJHome
 
 echo.
-echo Error: JAVA_HOME not found in your environment. >&2
-echo Please set the JAVA_HOME variable in your environment to match the >&2
+echo Error: JAVA_HOME not found in your environmentContext. >&2
+echo Please set the JAVA_HOME variable in your environmentContext to match the >&2
 echo location of your Java installation. >&2
 echo.
 goto error
@@ -71,7 +71,7 @@ if exist "%JAVA_HOME%\bin\java.exe" goto init
 echo.
 echo Error: JAVA_HOME is set to an invalid directory. >&2
 echo JAVA_HOME = "%JAVA_HOME%" >&2
-echo Please set the JAVA_HOME variable in your environment to match the >&2
+echo Please set the JAVA_HOME variable in your environmentContext to match the >&2
 echo location of your Java installation. >&2
 echo.
 goto error
