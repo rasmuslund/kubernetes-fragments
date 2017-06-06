@@ -24,7 +24,7 @@ public class ShellPromptProvider implements PromptProvider {
     @Override
     public String getPrompt() {
         return new Out()
-                .styleBold().colorYellow().append(getProviderName()).append(" ")
+                .styleBold().colorGreen().append(getProviderName()).append(" ")
                 .colorBlue().append(context.getCurrentContextPath()).append(" > ")
                 .toString();
     }

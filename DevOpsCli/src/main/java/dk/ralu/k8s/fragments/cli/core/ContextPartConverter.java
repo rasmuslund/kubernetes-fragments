@@ -2,6 +2,7 @@ package dk.ralu.k8s.fragments.cli.core;
 
 import static dk.ralu.k8s.fragments.cli.core.Context.ContextPart.SYMBOL_FOR_ANY;
 
+import dk.ralu.k8s.fragments.cli.commmand.OptionContexts;
 import dk.ralu.k8s.fragments.cli.core.Context.Application;
 import dk.ralu.k8s.fragments.cli.core.Context.Cluster;
 import dk.ralu.k8s.fragments.cli.core.Context.ContextPart;
@@ -31,7 +32,7 @@ public class ContextPartConverter implements Converter<ContextPart> {
     @Override
     public ContextPart convertFromText(String value, Class<?> targetType, String optionContext) {
         if (targetType == Cluster.class) {
-            if (value.equals(SYMBOL_FOR_ANY)) {
+            if (value.equals(SYMBOL_FOR_ANY) && !OptionContexts.isCreateOrDeleteContext(optionContext)) {
                 return Cluster.ANY;
             }
             return context.getAllClusters().stream()
@@ -40,7 +41,7 @@ public class ContextPartConverter implements Converter<ContextPart> {
                     .orElseThrow(() -> new IllegalArgumentException("Non-existing cluster: " + value));
         }
         if (targetType == Environment.class) {
-            if (value.equals(SYMBOL_FOR_ANY)) {
+            if (value.equals(SYMBOL_FOR_ANY) && !OptionContexts.isCreateOrDeleteContext(optionContext)) {
                 return Environment.ANY;
             }
             return context.getAllStandardEnvironments().stream()
@@ -49,7 +50,7 @@ public class ContextPartConverter implements Converter<ContextPart> {
                     .orElseGet(() -> new Environment(value));
         }
         if (targetType == Application.class) {
-            if (value.equals(SYMBOL_FOR_ANY)) {
+            if (value.equals(SYMBOL_FOR_ANY) && !OptionContexts.isCreateOrDeleteContext(optionContext)) {
                 return Application.ANY;
             }
             return context.getAllApplications().stream()
@@ -65,25 +66,25 @@ public class ContextPartConverter implements Converter<ContextPart> {
                                         MethodTarget target) {
 
         if (targetType == Cluster.class) {
-            completions.addAll(possibleCompletions(context.getAllClusters(), existingData));
+            completions.addAll(possibleCompletions(context.getAllClusters(), existingData, optionContext));
 
         } else if (targetType == Environment.class) {
-            completions.addAll(possibleCompletions(context.getAllStandardEnvironments(), existingData));
+            completions.addAll(possibleCompletions(context.getAllStandardEnvironments(), existingData, optionContext));
 
         } else if (targetType == Application.class) {
-            completions.addAll(possibleCompletions(context.getAllApplications(), existingData));
+            completions.addAll(possibleCompletions(context.getAllApplications(), existingData, optionContext));
         }
 
         return true;
     }
 
-    private Set<Completion> possibleCompletions(SortedSet<? extends ContextPart> contextParts, String existingData) {
+    private Set<Completion> possibleCompletions(SortedSet<? extends ContextPart> contextParts, String existingData, String optionContext) {
         Set<Completion> possibleCompletions = contextParts.stream()
                 .map(ContextPart::getName)
                 .filter(name -> name.startsWith(existingData))
                 .map(Completion::new)
                 .collect(Collectors.toSet());
-        if (existingData.equals("")) {
+        if (existingData.equals("") && !OptionContexts.isCreateOrDeleteContext(optionContext)) {
             possibleCompletions.add(new Completion(SYMBOL_FOR_ANY));
         }
         return possibleCompletions;

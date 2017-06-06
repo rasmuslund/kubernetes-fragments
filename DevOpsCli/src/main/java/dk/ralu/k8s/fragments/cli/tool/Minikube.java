@@ -12,6 +12,21 @@ import org.springframework.stereotype.Service;
 @Service
 public class Minikube extends Tool {
 
+    public void ensureRunning() {
+        if (getStatus() != Status.RUNNING) {
+            writeLineToConsole(out -> out.styleBold().append("Minikube not running - starting..."));
+            start();
+        }
+    }
+
+    // TODO: Find right arguments (mem+disc should be configurable), and enable relevant plug-ins
+    private void start() {
+        createExternalCommand()
+                .command("minikube start")
+                .showOutput()
+                .execute();
+    }
+
     public enum Status {
         RUNNING,
         STOPPED,
@@ -42,7 +57,7 @@ public class Minikube extends Tool {
             if (line1.equals("minikubeVM: Running") && line2.equals("localkube: Running")) {
                 return Status.RUNNING;
             }
-            if (line1.equals("minikubeVM: Stopped") && line2.equals("localkube: N/A")) {
+            if ((line1.equals("minikubeVM: Does Not Exist") || line1.equals("minikubeVM: Stopped")) && line2.equals("localkube: N/A")) {
                 return Status.STOPPED;
             }
         }

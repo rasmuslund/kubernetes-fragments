@@ -669,3 +669,36 @@ context set --application
 cls
 tools verify
 tools info
+// devcli 1.2.0.RELEASE log opened at 2017-06-05 21:26:32
+context set --environment Local 
+// [failed] environment create --creator Rasmus
+// devcli 1.2.0.RELEASE log opened at 2017-06-05 21:29:00
+context set --environment local 
+environment create --creator Rasmus
+! kubectl describe namespace local
+// devcli 1.2.0.RELEASE log opened at 2017-06-05 21:33:15
+context set --environment local 
+// [failed] environment create --creator Rasmus
+! kubectl delete namespace local
+environment create --creator Rasmus
+// devcli 1.2.0.RELEASE log opened at 2017-06-05 21:38:29
+! minikube delete namespace local
+context set --environment local 
+// devcli 1.2.0.RELEASE log opened at 2017-06-05 21:40:34
+context set --environment local 
+// [failed] environment create --creator Rasmus
+// devcli 1.2.0.RELEASE log opened at 2017-06-05 21:41:11
+context set --environment local 
+// [failed] environment create --creator Rasmus
+! minikube status
+// devcli 1.2.0.RELEASE log opened at 2017-06-05 21:55:23
+context set --environment local 
+environment create --creator Rasmus
+! kubectl delete namespace local
+environment create --creator Rasmus
+tools verify
+tools info
+// devcli 1.2.0.RELEASE log opened at 2017-06-06 08:20:46
+context set --environment local 
+! kubectl delete namespace local
+context set --application manage-backend 

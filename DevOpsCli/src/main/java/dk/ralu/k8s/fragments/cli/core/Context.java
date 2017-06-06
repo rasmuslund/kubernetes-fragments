@@ -153,9 +153,9 @@ public class Context {
 
         public static final Cluster ANY = new Cluster(SYMBOL_FOR_ANY);
 
-        static final Cluster MINIKUBE = new Cluster("Minikube");
-        static final Cluster NON_PROD = new Cluster("NonProd");
-        static final Cluster PROD = new Cluster("Prod");
+        public static final Cluster MINIKUBE = new Cluster("minikube");
+        static final Cluster NON_PROD = new Cluster("non-prod");
+        static final Cluster PROD = new Cluster("prod");
 
         private final SortedSet<Environment> hostedEnvironments = new TreeSet<>();
 
@@ -189,11 +189,11 @@ public class Context {
 
         public static final Environment ANY = new Environment(SYMBOL_FOR_ANY, Cluster.ANY, false);
 
-        static final Environment LOCAL = new Environment("Local", Cluster.MINIKUBE, true);
-        static final Environment DEV = new Environment("Dev", Cluster.NON_PROD, true);
-        static final Environment DEMO = new Environment("Demo", Cluster.NON_PROD, true);
-        static final Environment RMS = new Environment("RMS", Cluster.NON_PROD, true);
-        static final Environment PROD = new Environment("Prod", Cluster.PROD, true);
+        static final Environment LOCAL = new Environment("local", Cluster.MINIKUBE, true);
+        static final Environment DEV = new Environment("dev", Cluster.NON_PROD, true);
+        static final Environment DEMO = new Environment("demo", Cluster.NON_PROD, true);
+        static final Environment RMS = new Environment("rms", Cluster.NON_PROD, true);
+        static final Environment PROD = new Environment("prod", Cluster.PROD, true);
 
         private Cluster hostingCluster;
 
@@ -235,9 +235,9 @@ public class Context {
 
         public static final Application ANY = new Application(SYMBOL_FOR_ANY);
 
-        static final Application MANAGE_BACKEND = new Application("ManageBackend");
-        static final Application APP_BACKEND = new Application("AppBackend");
-        static final Application NOC_BACKEND = new Application("NocBackend");
+        static final Application MANAGE_BACKEND = new Application("manage-backend");
+        static final Application APP_BACKEND = new Application("app-backend");
+        static final Application NOC_BACKEND = new Application("noc-backend");
 
         protected Application(String name) {
             super(name);
