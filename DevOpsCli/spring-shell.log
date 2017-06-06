@@ -702,3 +702,19 @@ tools info
 context set --environment local 
 ! kubectl delete namespace local
 context set --application manage-backend 
+// devcli 1.2.0.RELEASE log opened at 2017-06-06 12:24:14
+context set --environment local 
+context set --environment lundsenv
+environment create --creator Rasmus
+debug specific --forceShowCommands true
+context set --environment local 
+environment create --creator Rasmus
+tools verify
+tools info
+// devcli 1.2.0.RELEASE log opened at 2017-06-06 12:37:14
+context set --environment prod 
+context clear
+tools verify
+// devcli 1.2.0.RELEASE log opened at 2017-06-06 12:47:35
+tools verify
+tools verify

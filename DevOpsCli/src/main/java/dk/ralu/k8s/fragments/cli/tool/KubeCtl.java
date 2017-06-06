@@ -28,6 +28,10 @@ public class KubeCtl extends Tool {
 
         minikube.ensureRunning();
 
+        /**
+         * TODO: Use yaml file instead - see: https://kubernetes.io/docs/tasks/administer-cluster/namespaces/#creating-a-new-namespace
+         */
+
         createExternalCommand()
                 .command("kubectl create namespace " + environment.getName() + " --save-config=true --context=minikube")
                 .showOutput()
